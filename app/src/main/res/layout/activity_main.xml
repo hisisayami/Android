@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/labor_amount"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:autofillHints=""
+            android:background="@drawable/labor_text_layout"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="LabelFor,MissingConstraints,VisualLintTextFieldSize,SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/material_amount"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:autofillHints=""
+            android:background="@drawable/labor_text_layout"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            app:layout_constraintTop_toBottomOf="@+id/labor_amount"
+            app:layout_constraintTop_toTopOf="@+id/labor_amount"
+            tools:ignore="LabelFor,MissingConstraints,VisualLintTextFieldSize,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/labor_text"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="6dp"
+            android:text='Labor: '
+            app:layout_constraintRight_toLeftOf="@+id/labor_amount"
+            app:layout_constraintTop_toBottomOf="@+id/labor_amount"
+            app:layout_constraintTop_toTopOf="@+id/labor_amount"
+            tools:ignore="MissingConstraints"
+            tools:text="Labor:" />
+
+        <TextView
+            android:id="@+id/material_text"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="4dp"
+            android:text='Materials: '
+            app:layout_constraintTop_toBottomOf="@+id/material_amount"
+            app:layout_constraintTop_toTopOf="@+id/material_amount"
+            app:layout_constraintRight_toLeftOf="@+id/material_amount"
+            tools:ignore="MissingConstraints"
+            tools:text="Materials:" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/calculate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            android:text='Calculate'
+            app:layout_constraintLeft_toRightOf="@+id/material_text"
+            app:layout_constraintTop_toBottomOf="@+id/material_amount"
+            tools:ignore="MissingConstraints"
+            tools:text="Calculate" />
+
+        <TextView
+            android:id="@+id/sub_total_text"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:text='SubTotal: '
+            app:layout_constraintLeft_toLeftOf="@+id/material_amount"
+            app:layout_constraintTop_toBottomOf="@+id/calculate_button"
+            tools:ignore="MissingConstraints"
+            tools:text="SubTotal:" />
+
+        <TextView
+            android:id="@+id/sub_total_label"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="100dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/calculate_button"
+            app:layout_constraintLeft_toRightOf="@+id/sub_total_text"
+            tools:text="Label" />
+
+        <TextView
+            android:id="@+id/tax_text"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="35dp"
+            android:text='Tax: '
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/sub_total_text"
+            app:layout_constraintLeft_toLeftOf="@+id/material_amount"
+            tools:text="Tax:" />
+
+        <TextView
+            android:id="@+id/tax_label"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="98dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toRightOf="@+id/tax_text"
+            app:layout_constraintTop_toBottomOf="@+id/sub_total_label"
+            tools:ignore="MissingConstraints"
+            tools:text="Label" />
+
+        <TextView
+            android:id="@+id/total_text"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"
+            android:text='Total: '
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/tax_text"
+            app:layout_constraintLeft_toLeftOf="@+id/material_amount"
+            tools:text="Total:" />
+
+        <TextView
+            android:id="@+id/total_label"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="95dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/tax_label"
+            app:layout_constraintLeft_toRightOf="@+id/total_text"
+            tools:text="Label" />
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
